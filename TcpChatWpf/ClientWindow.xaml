@@ -1,0 +1,32 @@
+﻿<Window x:Class="SocketLab.ClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TCP Client" Height="450" Width="600">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <TextBlock Text="IP:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="IpTextBox" Width="120"/>
+            <TextBlock Text="Порт:" VerticalAlignment="Center" Margin="10,0,5,0"/>
+            <TextBox x:Name="PortTextBox" Width="60"/>
+            <TextBlock Text="Имя:" VerticalAlignment="Center" Margin="10,0,5,0"/>
+            <TextBox x:Name="NameTextBox" Width="100"/>
+            <Button x:Name="ConnectButton" Content="Подключиться" Margin="10,0" Click="ConnectButton_Click"/>
+        </StackPanel>
+
+        <TextBox x:Name="ChatTextBox" Grid.Row="2" Margin="0,10,0,10" 
+                 IsReadOnly="True" VerticalScrollBarVisibility="Auto"
+                 TextWrapping="Wrap" FontFamily="Consolas"/>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3">
+            <TextBox x:Name="MessageTextBox" Width="400"/>
+            <Button x:Name="SendButton" Content="Отправить" Width="100" Margin="5,0" Click="SendButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
